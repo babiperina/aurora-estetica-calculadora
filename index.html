@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculadora de Serviços Aurora Bianca</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        padding: 0 5px;
+        background-color: #FAD3D7;
+    }
+    ul {
+        list-style-type: none;
+        padding: 0;
+    }
+    li {
+        margin-bottom: 10px;
+    }
+    .botoes-servicos {
+        display: flex;
+        flex-direction: column;
+        max-width: 200px;
+        gap: 10px;
+        align-self: center;
+    }
+
+    h1, h2{
+        align-self: center;
+    }
+    
+    h1,h2,h3,h4,h5{
+        color: #7B4428;
+    }
+</style>
+</head>
+<body>
+<h1>Aurora Bianca</h1>
+<h2>Calculadora de Serviços</h2>
+
+<h3>Adicionar serviço</h3>
+<div class="botoes-servicos">
+    <button onclick="adicionarServico('Micropigmentação de sobrancelhas')">Adicionar Micropigmentação de sobrancelhas</button>
+    <button onclick="adicionarServico('Micropigmentação labial')">Adicionar Micropigmentação labial</button>
+    <button onclick="adicionarServico('Revitalização de lábios')">Adicionar Revitalização de lábios</button>
+    <button onclick="adicionarServico('Design de sobrancelhas')">Adicionar Design de sobrancelhas</button>
+</div>
+<h3>Serviços</h3>
+<ul id="servicos-lista">
+    <!-- Aqui serão adicionados os serviços selecionados -->
+</ul>
+<div id="total">R$ 0.00</div>
+
+<h3>Forma de Pagamento</h3>
+<div id="forma-pagamento">
+    <label for="pagamento">Selecione a forma de pagamento:</label>
+    <select id="pagamento" onchange="calcularValorFinal()">
+        <option value="pix">Pix/Dinheiro</option>
+        <option value="credito_avista">Crédito A vista</option>
+        <option value="credito_parcelado">Crédito Parcelado</option>
+    </select>
+    <!-- <button onclick="calcularValorFinal()">Recalcular</button> -->
+</div>
+<h3>Valor final</h3>
+<div id="resultado"></div>
+
+<script>
+    var totalSemDesconto = 0;
+
+    const servicos = {
+        'Micropigmentação de sobrancelhas': {
+            valor: 660,
+            desconto_pix: 600,
+            desconto_credito_avista: 620
+        },
+        'Micropigmentação labial': {
+            valor: 680,
+            desconto_pix: 620,
+            desconto_credito_avista: 640
+        },
+        'Revitalização de lábios': {
+            valor: 135,
+            desconto_pix: 120,
+            desconto_credito_avista: 125
+        },
+        'Design de sobrancelhas': {
+            valor: 60,
+            desconto_pix: 50,
+            desconto_credito_avista: 52
+        }
+    };
+
+    let servicosSelecionados = [];
+
+    function adicionarServico(nomeServico) {
+        servicosSelecionados.push(nomeServico);
+        exibirServicos();
+        calcularValorFinal();
+    }
+
+    function removerServico(index) {
+        servicosSelecionados.splice(index, 1);
+        exibirServicos();
+        calcularValorFinal();
+    }
+
+    function exibirServicos() {
+        const lista = document.getElementById('servicos-lista');
+        lista.innerHTML = '';
+        let total = 0;
+        servicosSelecionados.forEach(servico => {
+            const valor = calcularValor(servico);
+            lista.innerHTML += `<li><button onclick="removerServico(${servicosSelecionados.indexOf(servico)})">Remover</button> ${servico} - R$ ${valor.toFixed(2)}</li>`;
+            total += valor;
+        });
+        totalSemDesconto = total;
+        document.getElementById('total').innerText = `Total: R$ ${total.toFixed(2)}`;
+        document.getElementById('forma-pagamento').style.display = 'block';
+    }
+
+    function calcularValor(nomeServico) {
+        const servico = servicos[nomeServico];
+        return servico.valor;
+    }
+
+    function calcularValorFinal() {
+        const formaPagamento = document.getElementById('pagamento').value;
+        let total = 0;
+        servicosSelecionados.forEach(servico => {
+            total += calcularValorComDesconto(servico, formaPagamento);
+        });
+        const desconto = calcularDesconto(formaPagamento, total);
+        const valorFinal = total - desconto;
+        document.getElementById('resultado').innerHTML = `<p>Valor final: R$ ${total}. Você economizou R$ ${totalSemDesconto-total}.</p>`;
+    }
+
+    function calcularValorComDesconto(nomeServico, formaPagamento) {
+        const servico = servicos[nomeServico];
+        if (formaPagamento === 'pix') {
+            return servico.desconto_pix || servico.valor;
+        } else if (formaPagamento === 'credito_avista') {
+            return servico.desconto_credito_avista || servico.valor;
+        } else if (formaPagamento === 'credito_parcelado') {
+            return servico.valor;
+        }
+    }
+
+    function calcularDesconto(formaPagamento, total) {
+        let desconto = 0;
+        if (formaPagamento === 'pix') {
+            servicosSelecionados.forEach(servico => {
+                const valorOriginal = servicos[servico].valor;
+                const valorComDesconto = servicos[servico].desconto_pix || valorOriginal;
+                desconto = (valorOriginal - valorComDesconto);
+            });
+        } else if (formaPagamento === 'credito_avista') {
+            servicosSelecionados.forEach(servico => {
+                const valorOriginal = servicos[servico].valor;
+                const valorComDesconto = servicos[servico].desconto_credito_avista || valorOriginal;
+                desconto = (valorOriginal - valorComDesconto);
+            });
+        }
+        return desconto;
+    }
+</script>
+</body>
+</html>
