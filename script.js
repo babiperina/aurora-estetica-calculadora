@@ -116,42 +116,42 @@ function calcularResultado() {
         totalPix+=qtdeRevitLabial*servicos['Revitalização de lábios'].desconto_pix;
         totalPix+=qtdeDesignSobrancelha*servicos['Design de sobrancelhas'].desconto_pix;
         economizou = totalSemDesconto - totalPix;
-        resultado = `<p>Valor final: R$ ${totalPix}. Você economizou R$ ${economizou}.</p>`;
+        resultado = `<p>R$ ${totalPix} é o valor final dos serviços selecionado para pagamento via Pix.</br>Desta forma, você irá economizar R$ ${economizou.toFixed(2)}.</p>`;
     } else if (formaPagamento=="credito_avista") {
         let totalCreditoAVista = qtdeMicroLabial*servicos['Micropigmentação labial'].desconto_credito_avista;
         totalCreditoAVista+=qtdeMicroSobrancelha*servicos['Micropigmentação de sobrancelhas'].desconto_credito_avista;
         totalCreditoAVista+=qtdeRevitLabial*servicos['Revitalização de lábios'].desconto_credito_avista;
         totalCreditoAVista+=qtdeDesignSobrancelha*servicos['Design de sobrancelhas'].desconto_credito_avista;
         economizou = totalSemDesconto - totalCreditoAVista;
-        resultado = `<p>Valor final: R$ ${totalCreditoAVista}. Você economizou R$ ${economizou}.</p>`;
+        resultado = `<p>R$ ${totalCreditoAVista} é o valor final dos serviços selecionado para pagamento via Pix.</br>Desta forma, você irá economizar R$ ${economizou.toFixed(2)}.</p>`;
     } else if (formaPagamento=="credito_parcelado_sem_juros") {
         let totalCreditoSemJuros = qtdeMicroLabial*servicos['Micropigmentação labial'].desconto_credito_semjuros;
         totalCreditoSemJuros+=qtdeMicroSobrancelha*servicos['Micropigmentação de sobrancelhas'].desconto_credito_semjuros;
         totalCreditoSemJuros+=qtdeRevitLabial*servicos['Revitalização de lábios'].desconto_credito_semjuros;
         totalCreditoSemJuros+=qtdeDesignSobrancelha*servicos['Design de sobrancelhas'].desconto_credito_semjuros;
         economizou = totalSemDesconto - totalCreditoSemJuros;
-        resultado = `<p>Valor final: R$ ${totalCreditoSemJuros}. Você economizou R$ ${economizou}.</p>`;
+        resultado = `<p>R$ ${totalCreditoSemJuros} é o valor final dos serviços selecionado para pagamento via Pix.</br>Desta forma, você irá economizar ${economizou.toFixed(2)}.</p>`;
     } else if (formaPagamento=="credito_parcelado_4x") {
         let totalCredito4x = qtdeMicroLabial*servicos['Micropigmentação labial'].credito_parcelado_4x;
         totalCredito4x+=qtdeMicroSobrancelha*servicos['Micropigmentação de sobrancelhas'].credito_parcelado_4x;
         totalCredito4x+=qtdeRevitLabial*servicos['Revitalização de lábios'].credito_parcelado_4x;
         totalCredito4x+=qtdeDesignSobrancelha*servicos['Design de sobrancelhas'].credito_parcelado_4x;
         economizou = totalSemDesconto - totalCredito4x;
-        resultado = `<p>Valor final: R$ ${totalCredito4x}. Você economizou R$ ${economizou}.</p>`;
+        resultado = `<p>R$ ${totalCredito4x} é o valor final dos serviços selecionado para pagamento via Pix.</br>Lembrando que em até 3x no crédito você não paga juros.</p>`;
     } else if (formaPagamento=="credito_parcelado_5x") {
         let totalCredito5x = qtdeMicroLabial*servicos['Micropigmentação labial'].credito_parcelado_5x;
         totalCredito5x+=qtdeMicroSobrancelha*servicos['Micropigmentação de sobrancelhas'].credito_parcelado_5x;
         totalCredito5x+=qtdeRevitLabial*servicos['Revitalização de lábios'].credito_parcelado_5x;
         totalCredito5x+=qtdeDesignSobrancelha*servicos['Design de sobrancelhas'].credito_parcelado_5x;
         economizou = totalSemDesconto - totalCredito5x;
-        resultado = `<p>Valor final: R$ ${totalCredito5x}. Você economizou R$ ${economizou}.</p>`;
+        resultado = `<p>R$ ${totalCredito5x}é o valor final dos serviços selecionado para pagamento via Pix.</br>Lembrando que em até 3x no crédito você não paga juros.</p>`;
     } else if (formaPagamento=="credito_parcelado_6x") {
         let totalCredito6x = qtdeMicroLabial*servicos['Micropigmentação labial'].credito_parcelado_6x;
         totalCredito6x+=qtdeMicroSobrancelha*servicos['Micropigmentação de sobrancelhas'].credito_parcelado_6x;
         totalCredito6x+=qtdeRevitLabial*servicos['Revitalização de lábios'].credito_parcelado_6x;
         totalCredito6x+=qtdeDesignSobrancelha*servicos['Design de sobrancelhas'].credito_parcelado_6x;
         economizou = totalSemDesconto - totalCredito6x;
-        resultado = `<p>Valor final: R$ ${totalCredito6x}. Você economizou R$ ${economizou}.</p>`;
+        resultado = `<p>R$ ${totalCredito6x}é o valor final dos serviços selecionado para pagamento via Pix.</br>Lembrando que em até 3x no crédito você não paga juros.</p>`;
     } else {
         resultado = `<p>Forma de pagamento inválida.</p>`;
     }

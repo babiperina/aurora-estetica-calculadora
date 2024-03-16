@@ -1,5 +1,5 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Raleway", sans-serif;
     background-color: #FAF0E1;
     min-width: 100%;
     margin: 0;
@@ -36,6 +36,16 @@ body {
     background-color: #EF7EAC;
     color: #FFFFFF;
     padding: 10px;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.calculadora-header h2{
+    font-size: 30px;
+}
+
+.calculadora-header h3{
+    font-size: 14px;
 }
 
 
@@ -71,4 +81,32 @@ li {
     flex-direction: column;
     max-width: 200px;
     gap: 10px;
+}
+
+.rozha-one-regular {
+    font-family: "Rozha One", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+.raleway {
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    /* font-weight: <weight>; */
+    font-style: normal;
+}
+  
+.btn-increment{
+    font-family: "Raleway", sans-serif;
+    color: #5e2c13;
+    background-color: #fff;
+    border-radius: 0px 50px 50px 0px;
+    border: none;
+}
+.btn-decrement{
+    font-family: "Raleway", sans-serif;
+    color: #5e2c13;
+    background-color: #fff;
+    border-radius: 50px 0px 0px 50px;
+    border: none;
 }

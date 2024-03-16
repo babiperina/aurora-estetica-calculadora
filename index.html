@@ -4,6 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Rozha+One&display=swap" rel="stylesheet">
 <title>Calculadora de Serviços Aurora Bianca</title>
 </head>
 <body>
@@ -12,81 +15,82 @@
 
 <header class="calculadora-header">
 <img src="imgs/logo.png" alt="logo">
-<h2>Calculadora de Serviços</h2>
+<h2 class="rozha-one-regular">Calculadora de Serviços</h2>
 <h3>@aurorabiancaestetica</h3>
 </header>
 
 <section class="calculator-content">
 <h4>Selecione os serviços desejados:</h4>
-<ul id="servicos-ofertados">
-    <li id="item-servico" class="micro-labial">
-        <img src="imgs/microlabial.png" alt="micro labial">
-        <div>
-            <p>Micropigmentação labial</p>   
-            <p id="valor-micro-labial" class="valor-servicos">N/A</p>
-        </div>
-        <div class="item-buttons">
-            <button onclick="removerQtdeServico('Micropigmentação labial')">-</button>
-            <span id="qtde-micro-labial">0</span>
-            <button onclick="adicionarServico('Micropigmentação labial')">+</button>
-        </div>
-    </li>
-    <li id="item-servico" class="micro-sobrancelha">
-        <img src="imgs/microsobrancelha.png" alt="micro sobrancelhas">
-        <div>
-            <p>Micropigmentação de sobrancelhas</p>   
-            <p id="valor-micro-sobrancelha" class="valor-servicos">N/A</p>
-        </div>
-        <div class="item-buttons">
-            <button onclick="removerQtdeServico('Micropigmentação de sobrancelhas')">-</button>
-            <span id="qtde-micro-sobrancelha">0</span>
-            <button onclick="adicionarServico('Micropigmentação de sobrancelhas')">+</button>
-        </div>
-    </li>
-    <li id="item-servico" class="micro-sobrancelha">
-        <img src="imgs/revitlabial.png" alt="Revitalização labial">
-        <div>
-            <p>Revitalização labial</p>
-            <p id="valor-revit-labial" class="valor-servicos">N/A</p>
-        </div> 
-        <div class="item-buttons">
-            <button onclick="removerQtdeServico('Revitalização de lábios')">-</button>
-            <span id="qtde-revit-labial">0</span>
-            <button onclick="adicionarServico('Revitalização de lábios')">+</button>
-        </div>
-    </li>
-    <li id="item-servico" class="design-sobrancelha">
-        <img src="imgs/designsobrancelha.png" alt="Design de sobrancelhas">
-        <div>
-            <p>Design de sobrancelhas</p>   
-            <p id="valor-design-sobrancelha" class="valor-servicos">N/A</p>
-        </div>
-        <div class="item-buttons">
-            <button onclick="removerQtdeServico('Design de sobrancelhas')">-</button>
-            <span id="qtde-design-sobrancelha">0</span>
-            <button onclick="adicionarServico('Design de sobrancelhas')">+</button>
-        </div>
-    </li>
-</ul>
-<ul id="servicos-lista">
-    <!-- Aqui serão adicionados os serviços selecionados -->
-</ul>
-<div id="total">Total: R$ 0.00</div>
-
+<div style="margin-left: 10px;">
+    <ul id="servicos-ofertados">
+        <li id="item-servico" class="micro-labial">
+            <img src="imgs/microlabial.png" alt="micro labial">
+            <div>
+                <p>Micropigmentação labial</p>   
+                <p id="valor-micro-labial" class="valor-servicos">N/A</p>
+            </div>
+            <div class="item-buttons">
+                <button onclick="removerQtdeServico('Micropigmentação labial')" class="btn-decrement">-</button>
+                <span id="qtde-micro-labial">0</span>
+                <button onclick="adicionarServico('Micropigmentação labial')" class="btn-increment">+</button>
+            </div>
+        </li>
+        <li id="item-servico" class="micro-sobrancelha">
+            <img src="imgs/microsobrancelha.png" alt="micro sobrancelhas">
+            <div>
+                <p>Micropigmentação de sobrancelhas</p>   
+                <p id="valor-micro-sobrancelha" class="valor-servicos">N/A</p>
+            </div>
+            <div class="item-buttons">
+                <button onclick="removerQtdeServico('Micropigmentação de sobrancelhas')" class="btn-decrement">-</button>
+                <span id="qtde-micro-sobrancelha">0</span>
+                <button onclick="adicionarServico('Micropigmentação de sobrancelhas')" class="btn-increment">+</button>
+            </div>
+        </li>
+        <li id="item-servico" class="micro-sobrancelha">
+            <img src="imgs/revitlabial.png" alt="Revitalização labial">
+            <div>
+                <p>Revitalização labial</p>
+                <p id="valor-revit-labial" class="valor-servicos">N/A</p>
+            </div> 
+            <div class="item-buttons">
+                <button onclick="removerQtdeServico('Revitalização de lábios')" class="btn-decrement">-</button>
+                <span id="qtde-revit-labial">0</span>
+                <button onclick="adicionarServico('Revitalização de lábios')" class="btn-increment">+</button>
+            </div>
+        </li>
+        <li id="item-servico" class="design-sobrancelha">
+            <img src="imgs/designsobrancelha.png" alt="Design de sobrancelhas">
+            <div>
+                <p>Design de sobrancelhas</p>   
+                <p id="valor-design-sobrancelha" class="valor-servicos">N/A</p>
+            </div>
+            <div class="item-buttons">
+                <button onclick="removerQtdeServico('Design de sobrancelhas')" class="btn-decrement">-</button>
+                <span id="qtde-design-sobrancelha">0</span>
+                <button onclick="adicionarServico('Design de sobrancelhas')" class="btn-increment">+</button>
+            </div>
+        </li>
+    </ul>
+    <div id="total">Total: R$ 0.00</div>
+</div>
 <h4>Selecione a forma de pagamento:</h4>
 <div id="forma-pagamento">
-    <select id="pagamento" onchange="calcularResultado()">
-        <option value="pix">Pix/Dinheiro</option>
-        <option value="credito_avista">Crédito A vista</option>
-        <option value="credito_parcelado_sem_juros">Crédito em até 3x (Sem Juros)</option>
-        <option value="credito_parcelado_4x">Crédito 4x (Com Juros)</option>
-        <option value="credito_parcelado_5x">Crédito 5x (Com Juros)</option>
-        <option value="credito_parcelado_6x">Crédito 6x (Com Juros)</option>
-    </select>
-    <!-- <button onclick="calcularValorFinal()">Recalcular</button> -->
+    <div style="margin-left: 10px;">
+        <select id="pagamento" onchange="calcularResultado()">
+            <option value="pix">Pix/Dinheiro</option>
+            <option value="credito_avista">Crédito A vista</option>
+            <option value="credito_parcelado_sem_juros">Crédito em até 3x (Sem Juros)</option>
+            <option value="credito_parcelado_4x">Crédito 4x (Com Juros)</option>
+            <option value="credito_parcelado_5x">Crédito 5x (Com Juros)</option>
+            <option value="credito_parcelado_6x">Crédito 6x (Com Juros)</option>
+        </select>
+    </div>
 </div>
 <h4>Valor final:</h4>
-<div id="resultado"></div>
+<div style="margin-left: 10px;">
+    <div id="resultado"></div>
+</div>
 </section>
 
 
