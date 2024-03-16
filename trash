@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+<title>Calculadora de Serviços Aurora Bianca</title>
+</head>
+<body>
+
+<div class="flex-container">
+
+<header class="calculadora-header">
+<h2>Calculadora de Serviços</h2>
+<h3>@aurorabiancaestetica</h3>
+<img src="" alt="logo">
+</header>
+
+<section class="calculator-content">
+<h4>Selecione os serviços desejados:</h4>
+<div class="botoes-servicos">
+    <button onclick="adicionarServico('Micropigmentação de sobrancelhas')">Adicionar Micropigmentação de sobrancelhas</button>
+    <button onclick="adicionarServico('Micropigmentação labial')">Adicionar Micropigmentação labial</button>
+    <button onclick="adicionarServico('Revitalização de lábios')">Adicionar Revitalização de lábios</button>
+    <button onclick="adicionarServico('Design de sobrancelhas')">Adicionar Design de sobrancelhas</button>
+</div>
+<h3>Serviços</h3>
+<ul id="servicos-lista">
+    <!-- Aqui serão adicionados os serviços selecionados -->
+</ul>
+<div id="total">R$ 0.00</div>
+
+<h4>Selecione a forma de pagamento:</h4>
+<div id="forma-pagamento">
+    <label for="pagamento">Selecione a forma de pagamento:</label>
+    <select id="pagamento" onchange="calcularValorFinal()">
+        <option value="pix">Pix/Dinheiro</option>
+        <option value="credito_avista">Crédito A vista</option>
+        <option value="credito_parcelado">Crédito Parcelado</option>
+    </select>
+    <!-- <button onclick="calcularValorFinal()">Recalcular</button> -->
+</div>
+<h4>Valor final:</h4>
+<div id="resultado"></div>
+</section>
+
+
+<script src="script.js"></script>
+</body>
+</html>

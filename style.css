@@ -1,0 +1,74 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #FAF0E1;
+    min-width: 100%;
+    margin: 0;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: normal;
+    align-items: normal;
+    align-content: normal;
+}
+  
+.flex-items:nth-child(1) {
+    display: block;
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: auto;
+    align-self: auto;
+    order: 0;   
+}
+  
+.flex-items:nth-child(2) {
+    display: block;
+    flex-grow: 2;
+    flex-shrink: 1;
+    flex-basis: auto;
+    align-self: auto;
+    order: 0;
+}
+
+.calculadora-header{
+    background-color: #EF7EAC;
+    color: #FFFFFF;
+    padding: 10px;
+}
+
+
+.calculadora-header img{
+    float: right;
+}
+
+.calculator-content{
+    color: #5E2C13;
+    padding: 10px;
+}
+
+#item-servico img{
+    float: left;
+    margin: 0px 15px 15px 0px;
+}
+
+.valor-servicos{
+    font-weight: 700;
+    font-size: 16px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 10px;
+}
+.botoes-servicos {
+    display: flex;
+    flex-direction: column;
+    max-width: 200px;
+    gap: 10px;
+}
