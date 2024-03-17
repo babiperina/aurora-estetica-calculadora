@@ -123,35 +123,35 @@ function calcularResultado() {
         totalCreditoAVista+=qtdeRevitLabial*servicos['Revitalização de lábios'].desconto_credito_avista;
         totalCreditoAVista+=qtdeDesignSobrancelha*servicos['Design de sobrancelhas'].desconto_credito_avista;
         economizou = totalSemDesconto - totalCreditoAVista;
-        resultado = `<p>R$ ${totalCreditoAVista} é o valor final dos serviços selecionado para pagamento via Pix.</br>Desta forma, você irá economizar R$ ${economizou.toFixed(2)}.</p>`;
+        resultado = `<p>R$ ${totalCreditoAVista} é o valor final dos serviços selecionado para pagamento no Crédito a vista.</br>Desta forma, você irá economizar R$ ${economizou.toFixed(2)}.</p>`;
     } else if (formaPagamento=="credito_parcelado_sem_juros") {
         let totalCreditoSemJuros = qtdeMicroLabial*servicos['Micropigmentação labial'].desconto_credito_semjuros;
         totalCreditoSemJuros+=qtdeMicroSobrancelha*servicos['Micropigmentação de sobrancelhas'].desconto_credito_semjuros;
         totalCreditoSemJuros+=qtdeRevitLabial*servicos['Revitalização de lábios'].desconto_credito_semjuros;
         totalCreditoSemJuros+=qtdeDesignSobrancelha*servicos['Design de sobrancelhas'].desconto_credito_semjuros;
         economizou = totalSemDesconto - totalCreditoSemJuros;
-        resultado = `<p>R$ ${totalCreditoSemJuros} é o valor final dos serviços selecionado para pagamento via Pix.</br>Desta forma, você irá economizar ${economizou.toFixed(2)}.</p>`;
+        resultado = `<p>R$ ${totalCreditoSemJuros} é o valor final dos serviços selecionado para pagamento via no Crédito Parcelado em até 3x (Sem Juros).</br>Desta forma, você irá economizar ${economizou.toFixed(2)}.</p>`;
     } else if (formaPagamento=="credito_parcelado_4x") {
         let totalCredito4x = qtdeMicroLabial*servicos['Micropigmentação labial'].credito_parcelado_4x;
         totalCredito4x+=qtdeMicroSobrancelha*servicos['Micropigmentação de sobrancelhas'].credito_parcelado_4x;
         totalCredito4x+=qtdeRevitLabial*servicos['Revitalização de lábios'].credito_parcelado_4x;
         totalCredito4x+=qtdeDesignSobrancelha*servicos['Design de sobrancelhas'].credito_parcelado_4x;
         economizou = totalSemDesconto - totalCredito4x;
-        resultado = `<p>R$ ${totalCredito4x} é o valor final dos serviços selecionado para pagamento via Pix.</br>Lembrando que em até 3x no crédito você não paga juros.</p>`;
+        resultado = `<p>R$ ${totalCredito4x} é o valor final dos serviços selecionado para pagamento no Crédito em 4x (Com Juros).</br>Lembrando que em até 3x no crédito você não paga juros.</p>`;
     } else if (formaPagamento=="credito_parcelado_5x") {
         let totalCredito5x = qtdeMicroLabial*servicos['Micropigmentação labial'].credito_parcelado_5x;
         totalCredito5x+=qtdeMicroSobrancelha*servicos['Micropigmentação de sobrancelhas'].credito_parcelado_5x;
         totalCredito5x+=qtdeRevitLabial*servicos['Revitalização de lábios'].credito_parcelado_5x;
         totalCredito5x+=qtdeDesignSobrancelha*servicos['Design de sobrancelhas'].credito_parcelado_5x;
         economizou = totalSemDesconto - totalCredito5x;
-        resultado = `<p>R$ ${totalCredito5x}é o valor final dos serviços selecionado para pagamento via Pix.</br>Lembrando que em até 3x no crédito você não paga juros.</p>`;
+        resultado = `<p>R$ ${totalCredito5x}é o valor final dos serviços selecionado para pagamento no Crédito em 5x (Com Juros).</br>Lembrando que em até 3x no crédito você não paga juros.</p>`;
     } else if (formaPagamento=="credito_parcelado_6x") {
         let totalCredito6x = qtdeMicroLabial*servicos['Micropigmentação labial'].credito_parcelado_6x;
         totalCredito6x+=qtdeMicroSobrancelha*servicos['Micropigmentação de sobrancelhas'].credito_parcelado_6x;
         totalCredito6x+=qtdeRevitLabial*servicos['Revitalização de lábios'].credito_parcelado_6x;
         totalCredito6x+=qtdeDesignSobrancelha*servicos['Design de sobrancelhas'].credito_parcelado_6x;
         economizou = totalSemDesconto - totalCredito6x;
-        resultado = `<p>R$ ${totalCredito6x}é o valor final dos serviços selecionado para pagamento via Pix.</br>Lembrando que em até 3x no crédito você não paga juros.</p>`;
+        resultado = `<p>R$ ${totalCredito6x}é o valor final dos serviços selecionado para pagamento no Crédito em 6x (Com Juros).</br>Lembrando que em até 3x no crédito você não paga juros.</p>`;
     } else {
         resultado = `<p>Forma de pagamento inválida.</p>`;
     }
